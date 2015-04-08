@@ -81,8 +81,11 @@ $$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)
 
 In this case the purpose of the indicator function is to select the probability of data points that actually generated them. In this case it would be like knowing the true assignments and hence we choose the exact (log) mixture component that generated it. However, the whole point is to learn such a hidden assignment without knowing it. Hence, to this goal we will be more conservative and instead replace the hard-assignment with soft assignments. i.e. instead we will try to maximize the following function:
 
-$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
+$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} p(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
 
+where the posterior probability $p(j|u)$, can be interpreted as the soft assignment of the data point $x^{(i)}_{C_u}$ getting the assignment to the (hidden) mixture $j$. Finally we are ready to perform the maximization step of the EM algorithm. In the maximization step $p(j|u)$ (the soft cluster assignment), are fixed and we update the model parameters with respect to this fixed posterior. Therefore, derive the M-step of this partially observed model by maximizing the above likelihood with respect to the variables $\mu^{(j)}_{C_u}$, $\sigma^2_j$ and $p_j$.
+
+\item In the E-step, the EM algorithm uses the updated parameters to re-evaluate the soft cluster assignments. Hence, write down the E-step [hint: the parameters of the model $\mu^{(j)}_{C_u}$, $\sigma^2_j$, $p_j$ are fixed in this step].
 
 \end{enumerate} 
 
