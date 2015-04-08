@@ -50,6 +50,10 @@ For this part of the project you will explore the connections of the results tha
   \item Consider a mixture model that uses a Gaussian as the conditional distribution given the hidden label i.e. $p(x^{(t)} | j, \theta) = N(x^{(t)}| \mu^{(j)}, \sigma^2_{j})$.  We will try to understand the EM algorithm on this model. 
  Recall that the EM algorithm aims to learn these parameters by sequential minimization (similar to how we presented clustering and boosting). 
 In the E-step we will have the model fixed (i.e. hold the $ \mu^{(j)}$ and the $\sigma^2_{j}$, similar to holding the clusters fix) and compute the soft count assignments for each data point i.e. the posterior probability $p(j | x^{(t)}) = p(j|t)$. The M-step will receive these soft-counts and treat them as fixed. Now that we have these soft counts, we will compute the maximum-likelihood estimates for our model but with the hard-counts replaced by the soft count. 
+
+Now that you've recalled the EM algorithm, please implement it and run it in the toy data set with a random initialization. 
+
+\item Now consider a different way to model
 \end{enumerate}
 
 \end{enumerate}
