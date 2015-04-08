@@ -65,16 +65,15 @@ Now that you've recalled the EM algorithm, please implement it and run it in the
 
 For this part of the project we will use the EM algorithm for matrix completion. We will use X to denote the data matrix. It will be an $n \times d$ matrix, meaning that there will be $n$ rows and $d$ columns. The rows of the data matrix indicate users and the columns indicate movies. A single entry $x^{(i)}_{j}$ of the matrix will indicate the rating person $i$ gave to movie $j$ and the rating will be in the set from 1 to 5, i.e. $x^{(i)}_{j} \in \{ 1, ..., 5\}$. 
 
-However, in a real life setting, most of the entries will be missing i.e. a user will not have watched most of the movies so he would have not rated any of those movies. To indicate that, we will use the set $C_{u}$ which is the collection of movie indices that user $u$ has rated. Hence, to denote a subset of the movies a particular user has watch we will use the notation $x^{(u)}_{C_u}$ which is a vector with only $|C_u|$ entries.
+However, in a real life setting, most of the entries will be missing i.e. a user will not have watched most of the movies so he would have not rated any of those movies. To indicate that, we will use the set $C_{u}$ which is the collection of movie indices that user $u$ has rated. Also, denote $H_{u}$ as the set of movie indices that a user has not watch. Notice that $C_{u} \cup H_{u} = \{1, ... , d \}$. To denote a subset of the movies a particular user has watch we will use the notation $x^{(u)}_{C_u}$ which is a vector with only $|C_u|$ entries. Similarly $x^{(u)}_{H_u}$ will be the vector that contains the hidden entries.
 
-For example, if we have the user vector $x^{(1)} = < 5, 4, ?, ?, 2>$, then its complete entries are $C_{1} = \{ 1, 2, 5\}$ and its complete vector would be $x^{(1)}_{C_1} = < 5, 4, 2>$.
+For example, if we have the user vector $x^{(1)} = < 5, 4, ?, ?, 2>$, then its complete entries are $C_{1} = \{ 1, 2, 5\}$ and $H_{1} = \{ 3, 4\}$. Also, its complete vector would be $x^{(1)}_{C_1} = < 5, 4, 2>$.
 
-In this case, we will have a different mixture model. Since we don't know 
-
+In this case, we will have a different mixture model and using it, derive a correct EM algorithm for the missing entires matrix completion problem.
 
 \begin{enumerate}
 
-\item 
+\item In this case the probability of a data point given the parameter has to involve the missing entries. In general, it has the form $P(x^{(u)} | \theta) = \int_{H_u}p(x^{(u)} |  \theta) dx_{H_u}$. Show that 
 
 \end{enumerate} 
 
