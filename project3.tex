@@ -75,17 +75,23 @@ In this case, we will have a different mixture model and using it, we will deriv
 
 \item Recall the mixture model from part 1: $P(x^{(u)} | \theta) = \sum^{K}_{j=1} p_j N(x^{(u)}; \mu^{(j)}, \sigma^2_j I) $. However, in the missing entries case, we would actually be interested in finding $P(x^{(u)}_{C_u} | \theta)$ (i.e. the vector without the missing entries since those are not observed). Explain (or prove) why the correct expression for $P(x^{(u)}_{C_u} | \theta)$ is$P(x^{(u)}_{C_u}  | \theta) = \sum^{K}_{j=1} p_j N(x^{(u)}_{C_u} ; \mu^{(j)}_{C_u} , \sigma^2_j I) $ [hint: notice that the covariance matrix has the identity matrix].
 
-\item Recall from the notes the complete log-likelihood using the hard-assignment:
+\item Now that we have the correct expression for the probability of a  partial data point $x^{(u)}_{C_u}$, we are ready to write the log-likelihood and maximize to derive the M-step of the EM algorithm. Recall from the notes that the complete log-likelihood using the hard-assignment:
 
-$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
+$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)}_{C_u} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
 
-In this case the purpose of the indicator function is to select the probability of data points that actually generated them. In this case it would be like knowing the true assignments and hence we choose the exact (log) mixture component that generated it. However, the whole point is to learn such a hidden assignment without knowing it. Hence, to this goal we will be more conservative and instead replace the hard-assignment with soft assignments. i.e. instead we will try to maximize the following function:
+Notice that we used the probability we derived in part (a). In this case the purpose of the indicator function is to select the probability of data points that actually generated them. In this case it would be like knowing the true assignments and hence we choose the exact (log) mixture component that generated it. However, the whole point is to learn such a hidden assignment without knowing it. Hence, to this goal we will be more conservative and instead replace the hard-assignment with soft assignments. i.e. instead we will try to maximize the following function:
 
-$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} p(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
+$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} p(j|u) \log( p_j N(x^{(u)}_{C_u} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
 
 where the posterior probability $p(j|u)$, can be interpreted as the soft assignment of the data point $x^{(i)}_{C_u}$ getting the assignment to the (hidden) mixture $j$. Finally we are ready to perform the maximization step of the EM algorithm. In the maximization step $p(j|u)$ (the soft cluster assignment), are fixed and we update the model parameters with respect to this fixed posterior. Therefore, derive the M-step of this partially observed model by maximizing the above likelihood with respect to the variables $\mu^{(j)}_{C_u}$, $\sigma^2_j$ and $p_j$.
 
 \item In the E-step, the EM algorithm uses the updated parameters to re-evaluate the soft cluster assignments. Hence, write down the E-step [hint: the parameters of the model $\mu^{(j)}_{C_u}$, $\sigma^2_j$, $p_j$ are fixed in this step].
+
+\item Now we are ready to implement the EM algorithm! Please implement the EM algorithm for the partially observed data model using your E and M steps from part (b) and (c).
+
+\item Please run your EM algorithm using the initialization that we will provide here to learn the model parameters on the incomplete netflix data set. Now use the parameters you learned to complete the matrix.
+
+\item Report the squared distance between entries you complete and the true entries.
 
 \end{enumerate} 
 
