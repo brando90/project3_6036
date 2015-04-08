@@ -35,12 +35,9 @@ the Stellar web site by 9am, April 25th.}
 
 Your task is to build mixture model for collaborative filtering. In this project you will be given a fraction of the data matrix containing users and movie ratings from the netflix database. We have processed a subset of Netflix's data such that you get access to all the ratings for a subset of movies. The goal of this project will be to use the hidden structure in the different types of users that exist using the EM algorithm, then with the knowledge and this hidden structure we hope to be able to complete a partially observed rating matrix as an end goal.
 
-\textbf{Notation}
-
-We will use X to denote the data matrix. It will be an $n \times d$ matrix, meaning that there will be $n$ rows and $d$ columns. The rows of the data matrix indicate users and the columns indicate movies. A single entry $x^{(i)}_{j}$ of the matrix will indicate the rating person $i$ gave to movie $j$ and the rating will be in the set from 1 to 5, i.e. $x^{(i)}_{j} \in \{ 1, ..., 5\}$.
 \begin{enumerate}
 
-\item {\bf Part 1}
+\item {\bf Part 1} Toy Data Set
 
 For this part of the project you will explore the connections of the results that clustering gives versus the clusters that EM algorithm gives.
 
@@ -64,7 +61,23 @@ Now that you've recalled the EM algorithm, please implement it and run it in the
 
 \end{enumerate}
 
+\item {\bf Part 2} Matrix Completion
+
+For this part of the project we will use the EM algorithm for matrix completion. We will use X to denote the data matrix. It will be an $n \times d$ matrix, meaning that there will be $n$ rows and $d$ columns. The rows of the data matrix indicate users and the columns indicate movies. A single entry $x^{(i)}_{j}$ of the matrix will indicate the rating person $i$ gave to movie $j$ and the rating will be in the set from 1 to 5, i.e. $x^{(i)}_{j} \in \{ 1, ..., 5\}$. 
+
+However, in a real life setting, most of the entries will be missing i.e. a user will not have watched most of the movies so he would have not rated any of those movies. To indicate that, we will use the set $C_{u}$ which is the collection of movie indices that user $u$ has rated. Hence, to denote a subset of the movies a particular user has watch we will use the notation $x^{(u)}_{C_u}$ which is a vector with only $|C_u|$ entries.
+
+For example, if we have the user vector $x^{(1)} = < 5, 4, ?, ?, 2>$, then its complete entries are $C_{1} = \{ 1, 2, 5\}$ and its complete vector would be $x^{(1)}_{C_1} = < 5, 4, 2>$.
+
+In this case, we will have a different mixture model. Since we don't know 
+
+
+\begin{enumerate}
+
 \item 
+
+\end{enumerate} 
+
 
 \end{enumerate}
 
