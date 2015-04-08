@@ -40,7 +40,7 @@ Your task is to build mixture model for collaborative filtering. In this project
 We will use X to denote the data matrix. It will be an $n \times d$ matrix, meaning that there will be $n$ rows and $d$ columns. The rows of the data matrix indicate users and the columns indicate movies. A single entry $x^{(i)}_{j}$ of the matrix will indicate the rating person $i$ gave to movie $j$ and the rating will be in the set from 1 to 5, i.e. $x^{(i)}_{j} \in \{ 1, ..., 5\}$.
 \begin{enumerate}
 
-\item[1] {\bf Part 1}
+\item {\bf Part 1}
 
 For this part of the project you will explore the connections of the results that clustering gives versus the clusters that EM algorithm gives.
 
@@ -55,7 +55,16 @@ Now that you've recalled the EM algorithm, please implement it and run it in the
 
 \item In this section we will try to understand how clustering is different with the mixture model and the learned parameters from the EM algorithm. With the learned parameters from part (c), plot the clusters by providing 3 contour curves for each of the gaussians learned. Explain why choosing contour curves that are evenly spaced out is not a good visualization of these gaussians. Furthermore explain why having some of the area that these contour curves cover intersect, a good visualization for the mixture models. Moreover, explain why in the mixture model it does not make sense to deterministically assign any data point to a gaussian and hence highlight its difference from clustering. Do points that are very far away from  clusters still have a chance to be assigned to any cluster in EM? What about in clustering?
 
+\item Now we will try to choose a good number of mixing components for the EM algorithm to learn the parameters. Explain why choosing a value of $k$ that achieves the highest log-likelihood might not be the best criterion for selecting the number of mixing components.
+
+\item One way to avoid the issues addressed in part (e) is to penalize a high number of parameters. Explain how the Bayesian Information Criterion (BIC) addresses any of the issue brought up in part (e) and why it might be a better function for choosing the number of mixture components.
+
+\item Implement the Bayesian Information Criterion (BIC) for selecting the number of mixture components. Choose the best value of k in the range $[ 5, 10, 15, 20 , 30]$.
+
+
 \end{enumerate}
+
+\item 
 
 \end{enumerate}
 
