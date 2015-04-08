@@ -75,11 +75,14 @@ In this case, we will have a different mixture model and using it, we will deriv
 
 \item Recall the mixture model from part 1: $P(x^{(u)} | \theta) = \sum^{K}_{j=1} p_j N(x^{(u)}; \mu^{(j)}, \sigma^2_j I) $. However, in the missing entries case, we would actually be interested in finding $P(x^{(u)}_{C_u} | \theta)$ (i.e. the vector without the missing entries since those are not observed). Explain (or prove) why the correct expression for $P(x^{(u)}_{C_u} | \theta)$ is$P(x^{(u)}_{C_u}  | \theta) = \sum^{K}_{j=1} p_j N(x^{(u)}_{C_u} ; \mu^{(j)}_{C_u} , \sigma^2_j I) $ [hint: notice that the covariance matrix has the identity matrix].
 
-\item Now recall from the notes that the complete log-likelihood using the hard-assignment would be:
+\item Recall from the notes the complete log-likelihood using the hard-assignment:
 
-$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right] = \sum^k_{j=1} \left[ \sum^{n}_{u=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
+$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
 
-In this case the purpose of the indicator function is to select the probability of data points that actually generated them. In this case it would be like knowing the true assignments. However, the whole point is to learn such a hidden assignment. Hence, we will replace the hard assignment by the soft
+In this case the purpose of the indicator function is to select the probability of data points that actually generated them. In this case it would be like knowing the true assignments and hence we choose the exact (log) mixture component that generated it. However, the whole point is to learn such a hidden assignment without knowing it. Hence, to this goal we will be more conservative and instead replace the hard-assignment with soft assignments. i.e. instead we will try to maximize the following function:
+
+$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
+
 
 \end{enumerate} 
 
