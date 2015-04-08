@@ -73,7 +73,13 @@ In this case, we will have a different mixture model and using it, we will deriv
 
 \begin{enumerate}
 
-\item Recall the mixture model from part 1: $P(x^{(u)} | \theta) = \sum^{K}_{j=1} p_j N(x^{(u)}; \mu^{(j)}, \sigma^2_j I) $. However, in the missing entries case, we would actually be interested in finding $P(x^{(u)}_{C_u} | \theta)$ (i.e. the vector without the missing entries since those are not observed). To find this probability we to involve the missing entries and it has the form $P(x^{(u)} | \theta) = \int_{H_u}p(x^{(u)}_{C_u}, x^{(u)}_{H_u} |  \theta) dx_{H_u}$. Explain why the correct mo 
+\item Recall the mixture model from part 1: $P(x^{(u)} | \theta) = \sum^{K}_{j=1} p_j N(x^{(u)}; \mu^{(j)}, \sigma^2_j I) $. However, in the missing entries case, we would actually be interested in finding $P(x^{(u)}_{C_u} | \theta)$ (i.e. the vector without the missing entries since those are not observed). Explain (or prove) why the correct expression for $P(x^{(u)}_{C_u} | \theta)$ is$P(x^{(u)}_{C_u}  | \theta) = \sum^{K}_{j=1} p_j N(x^{(u)}_{C_u} ; \mu^{(j)}_{C_u} , \sigma^2_j I) $ [hint: notice that the covariance matrix has the identity matrix].
+
+\item Now recall from the notes that the complete log-likelihood using the hard-assignment would be:
+
+$$ \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right] = \sum^k_{j=1} \left[ \sum^{n}_{u=1} \delta(j|u) \log( p_j N(x^{(u)} | \mu^{(j)}_{C_u}, \sigma^2_j I) \right]$$
+
+In this case the purpose of the indicator function is to select the probability of data points that actually generated them. In this case it would be like knowing the true assignments. However, the whole point is to learn such a hidden assignment. Hence, we will replace the hard assignment by the soft
 
 \end{enumerate} 
 
