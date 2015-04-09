@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  9 APR 2015 11:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  9 APR 2015 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -141,10 +141,9 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mh/mathtools.sty
-Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/calc.sty
+(./mathtools.sty
+Package: mathtools 2014/07/16 v1.15 mathematical typesetting tools
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count102
 \calc@Bcount=\count103
@@ -157,7 +156,7 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count104
 \calc@Cskip=\skip53
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mh/mhsetup.sty
+(./mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
@@ -325,35 +324,10 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 48.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Overfull \hbox (22.36195pt too wide) in paragraph at lines 48--49
-[]\OT1/ptm/m/n/10.95 Use the toy data set ($\OML/cmm/m/it/10.95 toy[]data:txt$\
-OT1/ptm/m/n/10.95 ) and the K-means code (func-tion \OT1/ptm/b/n/10.95 kMeans \
-OT1/ptm/m/n/10.95 in $\OML/cmm/m/it/10.95 project\OT1/cmr/m/n/10.95 3[]\OML/cmm
-/m/it/10.95 student:py$\OT1/ptm/m/n/10.95 )
- []
+) [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-
-Overfull \hbox (25.80212pt too wide) has occurred while \output is active
-\OT1/ptm/m/sl/10.95 6.036, Spring 2015 -- Project 3: Which movies do Gaussian l
-ikes? $ $ Issued: Thursday., 4/10 Due: Fri., 4/24 at 9am \OT1/ptm/m/n/10.95 1
- []
-
-[1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
-
-Overfull \hbox (25.80212pt too wide) has occurred while \output is active
-\OT1/ptm/m/sl/10.95 6.036, Spring 2015 -- Project 3: Which movies do Gaussian l
-ikes? $ $ Issued: Thursday., 4/10 Due: Fri., 4/24 at 9am \OT1/ptm/m/n/10.95 2
- []
-
-[2]
-Overfull \hbox (28.1357pt too wide) in paragraph at lines 107--108
+] [2]
+Overfull \hbox (28.1357pt too wide) in paragraph at lines 117--118
 []\OT1/ptm/m/n/10.95 The mix-ture model from Part 1 as-signs the prob-a-bil-ity
  den-sity $\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OMS
 /cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ) = [][] \OML/cmm/m/
@@ -361,64 +335,32 @@ it/10.95 p[]N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ; \O
 ML/cmm/m/it/10.95 ^^V[]; ^^[[]I\OT1/cmr/m/n/10.95 )$
  []
 
-
-Overfull \hbox (25.80212pt too wide) has occurred while \output is active
-\OT1/ptm/m/sl/10.95 6.036, Spring 2015 -- Project 3: Which movies do Gaussian l
-ikes? $ $ Issued: Thursday., 4/10 Due: Fri., 4/24 at 9am \OT1/ptm/m/n/10.95 3
- []
-
-[3]
-Overfull \hbox (25.80212pt too wide) has occurred while \output is active
-\OT1/ptm/m/sl/10.95 6.036, Spring 2015 -- Project 3: Which movies do Gaussian l
-ikes? $ $ Issued: Thursday., 4/10 Due: Fri., 4/24 at 9am \OT1/ptm/m/n/10.95 4
- []
-
-[4]
-Overfull \hbox (72.3246pt too wide) in paragraph at lines 165--167
-[]\OT1/ptm/m/n/10.95 You are given both the com-plete ma-trix (\OT1/pcr/m/n/10.
-95 1000mat.txt\OT1/ptm/m/n/10.95 ) and the un-com-pleted ma-trix ($\OT1/cmr/m/n
-/10.95 1000\OML/cmm/m/it/10.95 mat[]complete:txt$\OT1/ptm/m/n/10.95 ).
- []
-
-
-Overfull \hbox (199.834pt too wide) in paragraph at lines 165--167
-\OT1/ptm/m/n/10.95 ma-trix. [Ref-er-ence: You could find the def-i-ni-tion of F
-robe-nius norm at \OT1/pcr/m/n/10.95 http://mathworld.wolfram.com/FrobeniusNorm
-.html\OT1/ptm/m/n/10.95 ] 
- []
-
-
-Overfull \hbox (25.80212pt too wide) has occurred while \output is active
-\OT1/ptm/m/sl/10.95 6.036, Spring 2015 -- Project 3: Which movies do Gaussian l
-ikes? $ $ Issued: Thursday., 4/10 Due: Fri., 4/24 at 9am \OT1/ptm/m/n/10.95 5
- []
-
-[5] (./project3.aux) ) 
+[3] [4] [5] (./project3.aux) ) 
 Here is how much of TeX's memory you used:
- 4012 strings out of 493315
- 55645 string characters out of 6137904
- 126251 words of memory out of 5000000
- 7381 multiletter control sequences out of 15000+600000
- 17401 words of font info for 46 fonts, out of 8000000 for 9000
+ 4013 strings out of 493315
+ 55509 string characters out of 6137904
+ 127658 words of memory out of 5000000
+ 7383 multiletter control sequences out of 15000+600000
+ 16969 words of font info for 44 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,6n,35p,913b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/
-8r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.p
-fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on project3.pdf (5 pages, 170697 bytes).
+ 38i,7n,35p,837b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvi
+ps/base/8r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on project3.pdf (5 pages, 170706 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream
