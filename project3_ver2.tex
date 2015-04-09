@@ -51,7 +51,17 @@ For this part of the project you will compare clustering obtained via K-means to
 
     The goal of the EM algorithm is to estimate these unknown parameters by making use of observed data, say $x^{(1)},\ldots, x^{(N)}$. Starting with some initial guess at the unknown parameters, the E-Step keeps the model fixed (i.e., for each component $j$, its parameters $\mu^{(j)}$ and the $\sigma^2_{j}$ are held fixed; this idea is similar to K-means holding the centroids fixed in one of its steps), and computes the soft-assignments for each data point. Thus, for each data point $x^{(t)}$ ($1 \le t \le N$) the E-step computes the posterior probabilities $p(j | x^{(t)})$. The M-step takes these soft-assignments as fixed, and computes the maximum-likelihood estimates of the parameters $\mu^{(j)}$ and $\sigma_j^2I$ for each component $j$ ($1 \le j \le K$) (notice the analogy to K-means, which, given assignment of data points to their clusters, computes the centroids of each cluster).
 
-    \textbf{Task:} Implement the EM algorithm using a Gaussian mixture model (as recalled above), and run it in the toy data set with a \note{random initialization: WE have to provide the initialization so that the students can checkpoint their results: e.g., after running 100 iterations of EM, using our initialization, on this data, the log-likelihood they obtain should match the one we provide.}
+    \textbf{Task:} Implement the EM algorithm using a Gaussian mixture model (as recalled above).
+
+\item The EM algorithm has a chicken an egg problem. Before it can evaluate a better gaussian model, it needs soft-clustering assignments and for re-evaluating soft-clustering assignments it needs some new but fixed gaussian model to evaluate the soft-clusterings. Hence, we need to break this chicken and egg problem by providing some initialization for the parameters so that EM can start working. 
+
+	\textbf{Task:} Think of some adverbial way to initialize the EM algorithm and \textbf{explain} why that initialization might not be infer hidden labels in a good way.
+
+\item Now that you have considered an initialization for EM, run your implementation of the EM algorithm with the following initialization: [TODO BE DECIDED]. Compute and report the log-likelihood of the parameters you learned. 
+
+     \note{random initialization: WE have to provide the initialization so that the students can checkpoint their results: e.g., after running 100 iterations of EM, using our initialization, on this data, the log-likelihood they obtain should match the one we provide.}
+
+\item Explain why the initialization we provided is reasonable. Can you suggest a different initialization that might also be good?
 
     \note{The question below uses the word clustering, when really the students are only running K-means induced clustering. Perhaps good to clarify that hard clustering is meant.}
 \item Your next task is to understand how \note{K-means} clustering differs from the soft-clustering induced by learning a mixture model. Using the parameters estimated in part (c) (\note{obtained after 100 iterations of EM}), \textbf{plot} the clusters (\note{\textbf{visualize} the soft-clusters?}) by drawing 3 contours for each of the \text{2D?} Gaussians. \textbf{Explain} why choosing contour curves that are evenly spaced is not a good visualization of these Gaussians. Further, \textbf{explain} why is having some of the area covered by these contour curves cover intersect a good visualization for mixture models \note{This is a vague task...}. Also \textbf{explain} why in the mixture model it does not make sense to deterministically assign any data point to a Gaussian and hence highlight its difference from K-means clustering. Do points that are very far away from cluster \note{centroids} still have a chance to be assigned to any cluster in EM? What about in K-means?
@@ -88,17 +98,9 @@ Make sure to mention why the covariance matrix has an identity matrix $ |C_u| \t
  \item Now that you have a mixture model for each user, provide a possible interpretation to what this mixture model could mean in this application. Specifically, mention what the clustering type could mean.
 
 \item Using the mixture density from part (a) for a partial data point $x^{(u)}_{C_u}$, we are ready to write the log-likelihood and maximize to derive the M-step of the EM algorithm. 
-
-\note{The following text in blue color is not needed and should be deleted}
-\color{blue}
-Recall from the notes that the complete log-likelihood using the hard-assignment:
-
-$$ l(\theta) = \sum^n_{u=1} \left[ \sum^{K}_{j=1} \delta(j|u) \log( p_j N(x^{(u)}_{C_u} | \mu^{(j)}_{C_u}, \sigma^2_j I_{|C_u| \times |C_u|}) \right]$$
-
-Notice that we used the probability we derived in part (a). In this case the purpose of the indicator function is to select the probability of data points that actually generated them. In this case it would be like knowing the true assignments and hence we choose the exact (log) mixture component that generated it. However, the whole point is to learn such a hidden assignment without knowing it. Hence, to this goal we will be more conservative and instead replace the hard-assignment with soft assignments.
 \color{black}
 
-To that end, we will maximize the following log-likelihood:
+To that end, we will maximize the following incomplete log-likelihood:
 $$ l(\theta) = \sum_{u=1}^N \left[ \sum^{K}_{j=1} p(j|u) \log\bigl( p_j N(x^{(u)}_{C_u} | \mu^{(j)}_{C_u}, \sigma^2_j I_{|C_u| \times |C_u|} ) \bigr) \right]$$
 where the posterior probability $p(j|u)$ can be interpreted as the soft-assignment of the data point $x^{(u)}_{C_u}$ to the mixture component $j$. To maximize the above log-likelihood, we keep the probabilities $p(j|u)$ (the soft-assignments) fixed, and we maximize over the model parameters. In this part we will \textbf{derive} the M-step that results after maximizing the above likelihood with respect to the model parameters.
 
